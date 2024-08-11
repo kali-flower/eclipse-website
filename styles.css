@@ -5,6 +5,7 @@
     font-family: 'Kumbh Sans', sans-serif;
     scroll-behavior: smooth;
 }
+
 /* Navigation Bar */
 .navbar { 
     background: #0c0832;
@@ -206,26 +207,33 @@ navbar__btn {
 
 /* Hero */
 .hero {
-    background: black;
-    background: linear-gradient(to right, #161616, black);
-    padding: 200px 0;
+    height: 90vh;
+    position: relative;
+    background: 
+        linear-gradient(to right, 
+            rgba(0,0,0,1) 0%, 
+            rgba(0,0,0,0.7) 50%, 
+            rgba(0,0,0,0) 100%),
+        url('images/hero.png');
+    background-size: cover;
+    background-position: right center;
+    background-repeat: no-repeat;
 }
 
 .hero__container { 
+    position: absolute; 
+    bottom: 120px; 
+    left: 45px; 
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    height: 90%;
-    text-align: center;
-    padding: 30px;
+    align-items: flex-start;
+    text-align: left; 
+    max-width: 600px;
 }
 
 .hero__heading { 
-    font-size: 100px;
-    margin-bottom: 24px;
+    font-size: 80px;
+    margin-bottom: 10px;
     color: white;   
 }
 
@@ -242,9 +250,9 @@ navbar__btn {
 }
 
 .hero__description { 
-    font-size: 40px;
+    font-size: 30px;
+    margin-bottom: 20px;
     background: white; 
-
     background-size: 100%;
     -webkit-background-clip: text;
     -moz-background-clip: text;
@@ -268,9 +276,8 @@ navbar__btn {
 
 .button-container { 
     display: flex;
-    justify-content: center;
-    gap: 5px; 
-    margin-top: 20px;
+    gap: 8px; 
+    margin-top: 5px;
 }
 
 .main__btn { 
@@ -303,13 +310,27 @@ navbar__btn {
 }
 
 @media screen and (max-width: 768px) {
+    .hero__container {
+        bottom: 30px; 
+        left: 20px;
+        right: 20px; /* add right padding for smaller screens */
+    }
+
+    .hero__heading { 
+        font-size: 40px;
+    }
+
+    .hero__description { 
+        font-size: 20px;
+    }
+
     .button-container { 
         flex-direction: column;
-        align-items: center;
+        align-items: flex-start;
     }
 
     .main__btn { 
-        width: 80%;
+        width: 100%;
         margin-bottom: 10px;
     }
 }
