@@ -60,11 +60,16 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    /* padding: 0 1rem; */
     width: 125px;
     text-decoration: none;
     height: 100%;
     transition: all 0.3s ease
 }
+
+/* .navbar__links i {
+    font-size: 1.2rem;
+} */
 
 navbar__btn { 
     display: flex;
@@ -96,6 +101,10 @@ navbar__btn {
     color: rgb(107, 201, 245); 
     transition: all 0.3s ease;
 }
+
+/* .navbar__links:hover i {
+    color: rgb(107, 201, 245);
+} */
 
 @media screen and (max-width: 960px) { 
     .navbar__container { 
@@ -151,7 +160,10 @@ navbar__btn {
         padding: 2rem;
         width: 100%;
         display: table;
+    }
 
+    .navbar__links i {
+        font-size: 1.6rem; /* make icon larger on mobile */
     }
 
     .navbar__btn { 
