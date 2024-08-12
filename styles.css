@@ -211,9 +211,8 @@ navbar__btn {
     position: relative;
     background: 
         linear-gradient(to right, 
-            rgba(0,0,0,1) 0%, 
-            rgba(0,0,0,0.7) 50%, 
-            rgba(0,0,0,0) 100%),
+            #080834 0%,    
+            rgba(18, 41, 100, 0) 100%), 
         url('images/hero.png');
     background-size: cover;
     background-position: right center;
@@ -276,7 +275,7 @@ navbar__btn {
 
 .button-container { 
     display: flex;
-    gap: 8px; 
+    gap: 3px; 
     margin-top: 5px;
 }
 
