@@ -463,3 +463,67 @@
         margin-bottom: 4rem;
     }
 }
+
+/* Men's */
+.men {
+    background: #10133b;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding: 5rem 0;
+}
+
+.men h1 { 
+    background-color: #4f28fa;
+    background-image: linear-gradient(to bottom, #4f28fa 0%, #56a4f8 50%, #85fffd 100%);
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-txt-fill-color: transparent; 
+    margin-bottom: 2rem;
+    font-size: 3rem;
+}
+
+.men__wrapper { 
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    justify-items: center;
+}
+
+.men__card { 
+    margin: 50px;
+    height: 450px;
+    width: 100%;
+    max-width: 400px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+    transition: all 0.5s ease-in;
+}
+
+.men__card:nth-child(1) {
+    background-image: url('images/mens1.png'); 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+}
+
+.men__card:nth-child(2) {
+    background-image: url('images/mens2.png');
+    background-size: cover; 
+    background-position: center;
+    background-repeat: no-repeat; 
+}
+
+.men__card:nth-child(3) {
+    background-image: url('images/mens3.png'); 
+    background-size: cover; 
+    background-position: center;
+    background-repeat: no-repeat; 
+}
