@@ -281,43 +281,11 @@ navbar__btn {
     margin-top: 5px;
 }
 
-.main__btn { 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-decoration: none;
-    padding: 15px 30px;
-    height: 100%;
-    width: auto;
-    border: none;
-    outline: none;
-    border-radius: 4px;
-    background: #4568dc;
-    background: -webkit-linear-gradient(to left, #235eb0, #64c8cd); 
-    background: linear-gradient(to left, #235eb0, #64c8cd); 
-    color: white; 
-    font-weight: bold;
-    transition: all 0.3s ease;
-    cursor: pointer;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); 
-}
-
-.main__btn a { 
-    color: white;
-    text-decoration: none;
-    font-size: 1rem;
-}
-
-.main__btn:hover { 
-    background: #235eb0;
-    transition: all 0.3s ease;
-}
-
 @media screen and (max-width: 768px) {
     .hero__container {
         bottom: 30px; 
         left: 20px;
-        right: 20px; /* add right padding for smaller screens */
+        right: 20px;
     }
 
     .hero__heading { 
@@ -337,6 +305,58 @@ navbar__btn {
         width: 100%;
         margin-bottom: 10px;
     }
+}
+
+/* Buttons */
+.main__btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    padding: 15px 30px;
+    height: 100%;
+    width: auto;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    background: #4568dc;
+    background: -webkit-linear-gradient(to right, #235eb0, #64c8cd); 
+    background: linear-gradient(to right, #235eb0, #64c8cd); 
+    color: white; 
+    font-weight: bold;
+    transition: background 0.3s ease, color 0.3s ease;
+    cursor: pointer;
+    position: relative; 
+    z-index: 1;
+}
+
+.main__btn a { 
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    position: relative;
+    z-index: 2;
+}
+
+.main__btn:after { 
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: #235eb0;
+    transition: width 0.35s ease-in-out; 
+    border-radius: 4px;
+    z-index: -1; 
+}
+
+.main__btn:hover:after { 
+    width: 100%; 
+}
+
+.main__btn:hover { 
+    color: #fff;
 }
 
 /* Women's */
