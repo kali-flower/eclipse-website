@@ -72,7 +72,8 @@
     font-size: 1.2rem;
 } */
 
-navbar__btn { 
+.navbar__btn { 
+    margin-top: auto;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -113,7 +114,8 @@ navbar__btn {
     .navbar__container { 
         display: flex; 
         justify-content: space-between;
-        height: 80px;
+        height: auto;
+        min-height: 100vh;
         z-index: 1;
         width: 100%;
         max-width: 1300px;
@@ -122,11 +124,13 @@ navbar__btn {
 
     .navbar__menu { 
         display: grid;
-        grid-template-columns: auto;
+        grid-template-columns: 1fr;
         margin: 0; 
         width: 100%;
+        padding: 0;
         position: absolute;
         top: -1000px;
+        left: 0;
         opacity: 1;
         transition: all 0.5s ease;
         z-index: -1; 
@@ -137,8 +141,8 @@ navbar__btn {
         top: 100%;
         opacity: 1; 
         transition: all 0.5s ease;
-        z-index: 99;
-        height: 60vh;
+        z-index: 99%;
+        height: auto;
         font-size: 1.6rem;
     }
 
@@ -171,6 +175,7 @@ navbar__btn {
 
     .navbar__btn { 
         padding-bottom: 2rem;
+        width: 100%;
     }
 
     .button { 
@@ -361,7 +366,7 @@ navbar__btn {
 
 /* Women's */
 .main { 
-    background-color: #0f0f3b;
+    background-color: #10133b;
     padding: 10rem 0;
 }
 
@@ -369,13 +374,14 @@ navbar__btn {
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
-    justify-content: center;
+    justify-content: start;
     margin: 0 auto;
     height: 90%;
     z-index: 1; 
     width: 100%;
     max-width: 1300px;
     padding: 0 50px;
+    gap: 50px;
 }
 
 .main__content { 
@@ -412,4 +418,42 @@ navbar__btn {
     margin-top: 1.5rem;
     font-size: 1.5rem;
     margin-bottom: 1.5rem;
+}
+
+.main__image--card {
+    margin: 10px;
+    height: 600px;
+    width: 600px;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-image: url('images/womens.png');
+    background-size: cover; 
+    background-position: center;
+    color: #fff;
+}
+
+/* #card-2 { 
+    background: #235eb0;
+    background: -webkit-linear-gradient(to left, #235eb0, #72c9ce); 
+    background: linear-gradient(to left, #235eb0, #72c9ce); 
+} */
+
+/* Mobile Fixes */
+@media screen and (max-width: 1100px) {
+    .main__container { 
+        display: grid;
+        grid-template-columns: 1fr;
+        align-items: center;
+        justify-content: start;
+        width: 100%;
+        margin: 0 auto;
+        height: 90%;
+    }
+
+    .main__image--card { 
+        height: 425px;
+        width: 425px;
+    }
 }
