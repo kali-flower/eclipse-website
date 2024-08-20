@@ -495,7 +495,7 @@
 }
 
 .men__card { 
-    margin: 50px;
+    margin: 12px;
     height: 450px;
     width: 100%;
     max-width: 400px;
@@ -526,4 +526,42 @@
     background-size: cover; 
     background-position: center;
     background-repeat: no-repeat; 
+}
+
+.men__card h2 { 
+    text-align: center;
+}
+
+.men__card p { 
+    text-align: center;
+    margin-top: 24px;
+    font-size: 20px;
+}
+
+.men__btn { 
+    display: flex;
+    justify-content: center;
+    margin-top: 16px;
+    width: 200px;
+    align-self: center;
+}
+
+.men__card button { 
+    color: white;
+    padding: 14px 24px;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    background: #0f092c;    
+    font-size: 1rem;
+}
+
+.men__card button:hover { 
+    cursor: pointer;
+}
+
+.men__card:hover { 
+    transform: scale(1.075);
+    transition: 0.3s ease-in;
+    cursor: pointer;
 }
