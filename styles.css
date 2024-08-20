@@ -586,23 +586,23 @@
 
 .highlights__container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row; 
     align-items: center;
+    justify-content: space-between;
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 2rem;
 }
 
 .highlights__content {
-    text-align: center;
-    margin-bottom: 3rem;
+    text-align: right; 
+    margin-right: 4rem; 
     color: white;
 }
 
 .main__btn {
     display: inline-flex; 
 }
-
 
 .highlights__content h1 {
     font-size: 3rem;
@@ -638,11 +638,10 @@
 .highlights__gallery {
     position: relative;
     width: 100%;
-    max-width: 450px; 
+    max-width: 500px; 
     height: auto;
     overflow: hidden;
-    margin: 0 auto; 
-    border-radius: 10px;
+    border-radius: 20px;
 }
 
 .gallery__container {
@@ -653,8 +652,8 @@
 
 .gallery__image {
     width: 100%;
-    height: 500px;
-    object-fit: fill;
+    height: 600px;
+    object-fit: contain;
 }
 
 .gallery__nav {
