@@ -1,6 +1,7 @@
 // NavBar 
 const menu = document.querySelector('#mobile-menu');
 const menuLinks = document.querySelector('.navbar__menu');
+const navLogo = document.querySelector('#navbar__logo')
 
 // function to show mobile menu 
 const mobileMenu = () => { 
@@ -55,3 +56,4 @@ rightNav.addEventListener('click', () => {
     galleryContainer.style.transition = 'transform 0.5s ease'; // re-enable transition
     updateGallery();
 });
+
