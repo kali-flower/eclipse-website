@@ -11,7 +11,7 @@ const mobileMenu = () => {
 
 menu.addEventListener('click', mobileMenu);
 
-// Highlights 
+// Highlights Gallery
 const leftNav = document.querySelector('.gallery__nav--left');
 const rightNav = document.querySelector('.gallery__nav--right');
 const galleryContainer = document.querySelector('.gallery__container');
@@ -57,3 +57,39 @@ rightNav.addEventListener('click', () => {
     updateGallery();
 });
 
+// Highlight menu based on scroll position 
+const highlightMenu = () => { 
+    const element = document.querySelector('.highlight')
+    const womenMenu = document.querySelector('#women')
+    const menMenu = document.querySelector('#men')
+    const highlightsMenu = document.querySelector('#highlights')
+
+    let scrollPos = window.scrollY
+
+    // add highlight class to menu items
+    if(window.innerWidth > 960 && scrollPos < 600) { 
+        womenMenu.classList.add('highlight')
+        menMenu.classList.remove('highlight')
+
+        return
+    } else if (window.innerWidth > 960 && scrollPos < 1400) { 
+        menMenu.classList.add('highlight')
+        womenMenu.classList.remove('highlight')
+        highlightsMenu.classList.remove('highlight')
+
+        return
+    } else if (window.innerWidth > 960 && scrollPos < 2345) { 
+        highlightsMenu.classList.add('highlight')
+        menMenu.classList.remove('highlight')
+
+        return
+    }
+
+    if((element && window.innerWidth < 960 && scrollPos < 600) || element) { 
+        element.classList.remove('highlight')
+    }
+
+}
+
+window.addEventListener('scroll', highlightMenu); 
+window.addEventListener('click', highlightMenu);
