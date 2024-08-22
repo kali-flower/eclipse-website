@@ -61,22 +61,34 @@ rightNav.addEventListener('click', () => {
 document.addEventListener("DOMContentLoaded", function() {
     const sections = document.querySelectorAll("div[id]");
     const navLinks = document.querySelectorAll(".navbar__links");
+    const footer = document.querySelector(".footer__container"); 
 
     function highlightNavbar() {
-        let scrollY = window.pageYOffset;
+        let pageHeight = document.documentElement.scrollHeight;
+        let windowHeight = window.innerHeight;
         
+        // check if at bottom of page
+        if (scrollY + windowHeight >= pageHeight - 50) { // 50px threshold
+            navLinks.forEach(link => link.classList.remove("active"));
+            return; // exit function early
+        }
+
+        let activeSection = null;
+
         sections.forEach(current => {
             const sectionHeight = current.offsetHeight;
             const sectionTop = current.offsetTop - 50;
             const sectionId = current.getAttribute("id");
             
             if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-                navLinks.forEach(link => {
-                    link.classList.remove("active");
-                    if (link.getAttribute("href") === "#" + sectionId) {
-                        link.classList.add("active");
-                    }
-                });
+                activeSection = sectionId;
+            }
+        });
+
+        navLinks.forEach(link => {
+            link.classList.remove("active");
+            if (activeSection && link.getAttribute("href") === "#" + activeSection) {
+                link.classList.add("active");
             }
         });
     }
