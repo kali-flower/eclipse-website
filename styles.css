@@ -105,10 +105,16 @@
     transition: all 0.3s ease;
 }
 
-.navbar__links:hover { 
-    color: rgb(107, 201, 245); 
+.navbar__links:hover, .navbar__links.active:hover {
+    color: #56a4f8;
     transition: all 0.3s ease;
 }
+
+.navbar__links.active {
+    color: #4949ec; /* highglith color */
+    border-bottom: 2px solid #4949ec; /* underline effect */
+}
+
 
 @media screen and (max-width: 960px) { 
     .navbar__container { 

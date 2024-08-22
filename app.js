@@ -58,38 +58,29 @@ rightNav.addEventListener('click', () => {
 });
 
 // Highlight menu based on scroll position 
-const highlightMenu = () => { 
-    const element = document.querySelector('.highlight')
-    const womenMenu = document.querySelector('#women')
-    const menMenu = document.querySelector('#men')
-    const highlightsMenu = document.querySelector('#highlights')
+document.addEventListener("DOMContentLoaded", function() {
+    const sections = document.querySelectorAll("div[id]");
+    const navLinks = document.querySelectorAll(".navbar__links");
 
-    let scrollPos = window.scrollY
-
-    // add highlight class to menu items
-    if(window.innerWidth > 960 && scrollPos < 600) { 
-        womenMenu.classList.add('highlight')
-        menMenu.classList.remove('highlight')
-
-        return
-    } else if (window.innerWidth > 960 && scrollPos < 1400) { 
-        menMenu.classList.add('highlight')
-        womenMenu.classList.remove('highlight')
-        highlightsMenu.classList.remove('highlight')
-
-        return
-    } else if (window.innerWidth > 960 && scrollPos < 2345) { 
-        highlightsMenu.classList.add('highlight')
-        menMenu.classList.remove('highlight')
-
-        return
+    function highlightNavbar() {
+        let scrollY = window.pageYOffset;
+        
+        sections.forEach(current => {
+            const sectionHeight = current.offsetHeight;
+            const sectionTop = current.offsetTop - 50;
+            const sectionId = current.getAttribute("id");
+            
+            if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+                navLinks.forEach(link => {
+                    link.classList.remove("active");
+                    if (link.getAttribute("href") === "#" + sectionId) {
+                        link.classList.add("active");
+                    }
+                });
+            }
+        });
     }
 
-    if((element && window.innerWidth < 960 && scrollPos < 600) || element) { 
-        element.classList.remove('highlight')
-    }
-
-}
-
-window.addEventListener('scroll', highlightMenu); 
-window.addEventListener('click', highlightMenu);
+    window.addEventListener("scroll", highlightNavbar);
+    highlightNavbar(); // call once to set initial state
+});
