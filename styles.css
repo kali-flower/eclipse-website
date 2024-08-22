@@ -111,8 +111,8 @@
 }
 
 .navbar__links.active {
-    color: #4949ec; /* highglith color */
-    border-bottom: 2px solid #4949ec; /* underline effect */
+    color: #4949ec; /* highlight color */
+    border-bottom: 4px solid #4949ec; /* underline effect */
 }
 
 
@@ -592,7 +592,7 @@
 
 .highlights__container {
     display: flex;
-    flex-direction: row; 
+    flex-direction: row;
     align-items: center;
     justify-content: space-between;
     max-width: 1200px;
@@ -681,6 +681,34 @@
 
 .gallery__nav--right {
     right: 10px;
+}
+
+@media screen and (max-width: 768px) {
+    .highlights__container {
+        flex-direction: column-reverse; 
+    }
+
+    .highlights__content {
+        text-align: center;
+        margin-right: 0;
+        margin-top: 2rem; 
+    }
+
+    .highlights__gallery {
+        width: 100%; 
+        max-width: none;
+    }
+
+    .highlights__content h1,
+    .highlights__content h2,
+    .highlights__content p {
+        text-align: center;
+    }
+
+    .highlights__content .main__btn {
+        margin: 0 auto;
+        display: block;
+    }
 }
 
 /* Footer CSS */
